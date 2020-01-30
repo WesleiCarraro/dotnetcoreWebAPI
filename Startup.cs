@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace Glossary
 {
@@ -25,6 +26,17 @@ namespace Glossary
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //add this because of auth0
+            services.AddAuthentication(options => 
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options => 
+            {
+                options.Authority = "https://wesleicarraro.auth0.com/";
+                options.Audience = "GlossaryAPI";
+            });
+            
             services.AddControllers();
         }
 
@@ -37,9 +49,8 @@ namespace Glossary
             }
 
             app.UseHttpsRedirection();
-
             app.UseRouting();
-
+            app.UseAuthentication();             //add this because of auth0
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

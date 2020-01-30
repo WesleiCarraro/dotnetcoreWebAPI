@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\workspace\\_projects_dotnetcore\\Glossary\\Glossary.csproj": {}
+    "C:\\workspace\\_projects_dotnetcore\\dotnetcoreWebAPIauth0\\Glossary\\Glossary.csproj": {}
   },
   "projects": {
-    "C:\\workspace\\_projects_dotnetcore\\Glossary\\Glossary.csproj": {
+    "C:\\workspace\\_projects_dotnetcore\\dotnetcoreWebAPIauth0\\Glossary\\Glossary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\workspace\\_projects_dotnetcore\\Glossary\\Glossary.csproj",
+        "projectUniqueName": "C:\\workspace\\_projects_dotnetcore\\dotnetcoreWebAPIauth0\\Glossary\\Glossary.csproj",
         "projectName": "Glossary",
-        "projectPath": "C:\\workspace\\_projects_dotnetcore\\Glossary\\Glossary.csproj",
+        "projectPath": "C:\\workspace\\_projects_dotnetcore\\dotnetcoreWebAPIauth0\\Glossary\\Glossary.csproj",
         "packagesPath": "C:\\Users\\Weslei\\.nuget\\packages\\",
-        "outputPath": "C:\\workspace\\_projects_dotnetcore\\Glossary\\obj\\",
+        "outputPath": "C:\\workspace\\_projects_dotnetcore\\dotnetcoreWebAPIauth0\\Glossary\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Weslei\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -37,6 +37,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
